@@ -1,43 +1,50 @@
-[README.md](https://github.com/user-attachments/files/31966073/README.md)
 
-## App Overview
-- App Name: ParkPlanner Chat
-- Short Description: A browser-based TypeScript chatbot for urban park and green space planning.
-- Ollama Model Used: qwen2.5:3b
-- VS Code Agent / Coding Model Used: Codex
+# TypeScript
 
-## Prompt Workflow
-- Prompt Generator Used: ChatGPT
-- 3 Details I Changed From the Example Prompt:
-  1. Model changed to qwen2.5:3b for laptop performance.
-  2. UI layout improved with sidebar calculators and park metric chips.
-  3. Quick-action wording and assistant behavior personalized for urban park planning.
+[![CI](https://github.com/microsoft/TypeScript/actions/workflows/ci.yml/badge.svg)](https://github.com/microsoft/TypeScript/actions/workflows/ci.yml)
+[![npm version](https://badge.fury.io/js/typescript.svg)](https://www.npmjs.com/package/typescript)
+[![Downloads](https://img.shields.io/npm/dm/typescript.svg)](https://www.npmjs.com/package/typescript)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/microsoft/TypeScript/badge)](https://securityscorecards.dev/viewer/?uri=github.com/microsoft/TypeScript)
 
-## Features
-- Core Features:
-  - Real Ollama REST API connection
-  - Streaming NDJSON response
-  - Conversation history
-  - Dark/light mode
-  - Clear conversation
-  - 4 quick-action buttons
-  - Ollama error banner
-- Bonus Features:
-  - Export chat as .txt
-  - 10-minute walk radius calculator
-  - Per-capita park area calculator
 
-## Installation and Run
-npm install
-npm run build
-npm run dev
+[TypeScript](https://www.typescriptlang.org/) is a language for application-scale JavaScript. TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript. Try it out at the [playground](https://www.typescriptlang.org/play/), and stay up to date via [our blog](https://blogs.msdn.microsoft.com/typescript) and [Twitter account](https://twitter.com/typescript).
 
-## Strengths and Limits
-- What works well: Provides park planning calculations, quick actions, and live streaming responses.
-- Known issues or limits: Response quality depends on the local Ollama model and whether Ollama is running.
+Find others who are using TypeScript at [our community page](https://www.typescriptlang.org/community/).
 
-## Screenshots
-- Screenshot 1: Light mode
-- Screenshot 2: Dark mode
-- Screenshot 3: Quick-action button in use
-- Screenshot 4: Bonus calculator
+## Installing
+
+For the latest stable version:
+
+```bash
+npm install -D typescript
+```
+
+For our nightly builds:
+
+```bash
+npm install -D typescript@next
+```
+
+## Contribute
+
+There are many ways to [contribute](https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md) to TypeScript.
+* [Submit bugs](https://github.com/microsoft/TypeScript/issues) and help us verify fixes as they are checked in.
+* Review the [source code changes](https://github.com/microsoft/TypeScript/pulls).
+* Engage with other TypeScript users and developers on [StackOverflow](https://stackoverflow.com/questions/tagged/typescript).
+* Help each other in the [TypeScript Community Discord](https://discord.gg/typescript).
+* Join the [#typescript](https://twitter.com/search?q=%23TypeScript) discussion on Twitter.
+* [Contribute bug fixes](https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md).
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see
+the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com)
+with any additional questions or comments.
+
+## Documentation
+
+*  [TypeScript in 5 minutes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+*  [Programming handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+*  [Homepage](https://www.typescriptlang.org/)
+
+## Roadmap
+
+For details on our planned features and future direction, please refer to our [roadmap](https://github.com/microsoft/TypeScript/wiki/Roadmap).
