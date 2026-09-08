@@ -1,0 +1,78 @@
+{\rtf1\ansi\ansicpg1254\cocoartf2868
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Create a complete browser\uc0\u8208 based TypeScript chatbot project in the current folder.\
+Generate all files without explanation. Specifications:\
+PROJECT: ParkPlanner Chat | THEME: Urban Park & Green Space | MODEL: qwen3.5:9b | API:\
+http://localhost:11434/api/chat | STREAMING: true\
+FILES TO CREATE:\
+\uc0\u8208  package.json with name \'94urban\u8208 park\u8208 green\u8208 space\u8208 chat\'94, scripts dev uses \'94npx\
+http\uc0\u8208 server . \u8208 p 3000 \u8208 o\'94 and build uses \'94npx tsc\'94, devDependencies typescript\
+^5.4.0 and http\uc0\u8208 server ^14.1.0\
+\uc0\u8208  tsconfig.json target ES2020, module ES2020, moduleResolution bundler, strict true,\
+outDir ./dist\
+\uc0\u8208  index.html\
+\uc0\u8208  style.css\
+\uc0\u8208  src/app.ts\
+\uc0\u8208  README.md\
+SYSTEM PROMPT (hardcode as SYSTEM_PROMPT constant in app.ts):\
+\'94You are ParkPlanner, an urban park designer with 20 years of experience in public\
+green space. You specialize in per\uc0\u8208 capita green area standards (WHO: 9 m\'b2/person;\
+NRPA: 40.5 m\'b2/person), biodiversity\uc0\u8208 friendly landscaping, playground safety per EN\
+1176, 10\uc0\u8208 minute walk service area analysis (400\u8208 800m walking catchment), and park\
+zone programming (active recreation, passive/nature, facility zones). Every design\
+recommendation includes area calculations and citations. Reference WHO,\
+UN\uc0\u8208 Habitat, NRPA, or EN 1176 as applicable. Decline questions outside park design\
+and green space planning.\'94\
+QUICK ACTION BUTTONS \'97 4 buttons that pre\uc0\u8208 fill the textarea and auto\u8208 submit on click:\
+\uc0\u8208  Per Capita Park Area \u8208 > Calculate whether a district meets WHO and NRPA green space\
+standards.\
+\uc0\u8208  10\u8208 Minute Walk \u8208 > Explain how a 400\u8208 800 m walking catchment changes park access\
+planning.\
+\uc0\u8208  Playground Safety \u8208 > What are the planning implications of EN 1176 for a\
+neighborhood playground?\
+\uc0\u8208  Zone Mix \u8208 > Propose an area split between active recreation, passive nature, and\
+facilities for a 6\uc0\u8208 hectare park.\
+COLORS:\
+Light mode: bg #EEF9F2, primary #0B8457, accent #84A98C, text #1B2A22, surface #FFFFFF\
+Dark mode: bg #09140F, primary #3EB489, accent #CAD2C5, text #E8F4EC, surface #132019\
+UI LAYOUT:\
+\uc0\u8208  Fixed header: app name + emoji left, \'94Urban Park & Green Space Assistant\'94 center,\
+dark/light toggle right\
+\uc0\u8208  Info bar: \'94Model: qwen3.5:9b | Ollama: localhost:11434 | Theme: Urban Park &\
+Green Space\'94\
+\uc0\u8208  Sidebar 220px: theme emoji icon, 4 quick\u8208 action buttons, \'94Clear Conversation\'94 button\
+\uc0\u8208  Chat area: right\u8208 aligned user bubbles (primary color), left\u8208 aligned AI bubbles (surface color), markdown rendering\
+\uc0\u8208  Streaming indicator: blinking | cursor at end of partial AI message\
+\uc0\u8208  Auto\u8208 scroll to bottom during streaming\
+\uc0\u8208  Send button disabled while streaming\
+\uc0\u8208  Input: auto\u8208 resize textarea (max 4 rows) + Send button, Enter submits, Shift+Enter\
+inserts newline\
+\uc0\u8208  Character counter below textarea showing used / 2000\
+\uc0\u8208  Styled Ollama error banner if fetch fails: \'94Cannot reach Ollama at localhost:11434.\
+Run: ollama serve\'94\
+\uc0\u8208  Add walking\u8208 radius ring motifs and a park\u8208 zone color legend in the sidebar\
+\uc0\u8208  Highlight distance bands, area calculations, and standard references in soft park\
+metric chips\
+TYPESCRIPT REQUIREMENTS:\
+\uc0\u8208  conversationHistory array of \{role: \'94system\'94|\'94user\'94|\'94assistant\'94, content: string\}\
+\uc0\u8208  Prepend SYSTEM_PROMPT as \{role:\'94system\'94\} on every API call\
+\uc0\u8208  POST to http://localhost:11434/api/chat with \{model:\'94qwen3.5:9b\'94, messages:\
+conversationHistory, stream:true\}\
+\uc0\u8208  Parse streaming NDJSON: each line is JSON with message.content field; accumulate\
+tokens and update DOM in real time\
+\uc0\u8208  On chunk where done===true: stop streaming, remove cursor, re\u8208 enable send button\
+\uc0\u8208  Simple regex markdown renderer: **bold**\u8208 ><strong>, \'91code\'91\u8208 ><code>,\
+\'91\'91\'91block\'91\'91\'91\uc0\u8208 ><pre><code>, \u8208  item\u8208 ><li> in a <ul>\
+\uc0\u8208  Memory only \'97 no localStorage\
+\uc0\u8208  After rendering, wrap 400\u8208 800m catchment values, m\'b2/person figures, and EN 1176\
+references in styled park chips\
+BONUS:\
+\uc0\u8208  Export chat as .txt download button\
+\uc0\u8208  Sidebar widget: 10\u8208 minute walk radius calculator using average walking speed\
+\uc0\u8208  Sidebar widget: per\u8208 capita park area calculator comparing local provision to WHO and\
+NRPA benchmarks}

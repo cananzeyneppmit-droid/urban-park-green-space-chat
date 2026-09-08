@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ParkPlanner Chat</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="dist/app.js"></script>
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand"><span aria-hidden="true">🌳</span> ParkPlanner Chat</div>
+      <div class="subtitle">Urban Park &amp; Green Space Assistant</div>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">☾</button>
+    </header>
+
+    <div class="info-bar">Model: qwen2.5:3b | Ollama: localhost:11434 | Theme: Urban Park &amp; Green Space</div>
+
+    <main class="app-shell">
+      <aside class="sidebar" aria-label="Park planning tools">
+        <div class="theme-mark" aria-hidden="true">
+          <span>🏞️</span>
+          <div class="ring-motif">
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+        </div>
+
+        <section class="sidebar-section">
+          <h2>Quick Actions</h2>
+          <button class="quick-action" type="button" data-prompt="Calculate whether a district meets WHO and NRPA green space standards.">Per Capita Park Area</button>
+          <button class="quick-action" type="button" data-prompt="Explain how a 400-800 m walking catchment changes park access planning.">10-Minute Walk</button>
+          <button class="quick-action" type="button" data-prompt="What are the planning implications of EN 1176 for a neighborhood playground?">Playground Safety</button>
+          <button class="quick-action" type="button" data-prompt="Propose an area split between active recreation, passive nature, and facilities for a 6-hectare park.">Zone Mix</button>
+        </section>
+
+        <section class="sidebar-section legend">
+          <h2>Park Zones</h2>
+          <div><span class="swatch active-zone"></span> Active recreation</div>
+          <div><span class="swatch nature-zone"></span> Passive nature</div>
+          <div><span class="swatch facility-zone"></span> Facilities</div>
+        </section>
+
+        <section class="sidebar-section calculator">
+          <h2>10-Min Radius</h2>
+          <label for="walkSpeed">Speed km/h</label>
+          <input id="walkSpeed" type="number" min="1" max="8" step="0.1" value="4.8" />
+          <output id="walkRadius">800 m</output>
+        </section>
+
+        <section class="sidebar-section calculator">
+          <h2>Green Area</h2>
+          <label for="population">Population</label>
+          <input id="population" type="number" min="0" step="100" value="10000" />
+          <label for="parkArea">Park area m²</label>
+          <input id="parkArea" type="number" min="0" step="1000" value="90000" />
+          <output id="areaResult">9.0 m²/person meets WHO, below NRPA</output>
+        </section>
+
+        <button class="secondary-button" id="exportChat" type="button">Export Chat</button>
+        <button class="secondary-button danger" id="clearChat" type="button">Clear Conversation</button>
+      </aside>
+
+      <section class="chat-panel" aria-label="Chat conversation">
+        <div class="error-banner" id="errorBanner" role="alert" hidden>
+          Cannot reach Ollama at localhost:11434. Run: ollama serve
+        </div>
+        <div class="messages" id="messages" aria-live="polite"></div>
+        <form class="composer" id="chatForm">
+          <div class="input-wrap">
+            <textarea id="promptInput" maxlength="2000" rows="1" placeholder="Ask about park access, green area standards, EN 1176 safety, or zone programming..."></textarea>
+            <div class="counter" id="charCounter">0 / 2000</div>
+          </div>
+          <button id="sendButton" type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
