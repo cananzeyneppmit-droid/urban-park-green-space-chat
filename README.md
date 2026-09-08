@@ -1,9 +1,4 @@
-# CRP445 Assignment 5 - Ollama Chatbot
 
-## Student Information
-- Name: Canan Zeynep Mit
-- Student ID: 2553105
-- Assigned Theme: Urban Park & Green Space
 
 ## App Overview
 - App Name: ParkPlanner Chat
